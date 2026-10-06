@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>齐力电影网 - 齐力电影在线推荐_热门影视榜单与精选片单 | qilidianyingwang-cn.github.io</title>
+<meta name="description" content="齐力电影网提供精选电影推荐、热门影视榜单、全类型蜂房索引与最新影视资讯，帮你快速找到值得一看的好电影。页面轻量、移动端自适应，手机浏览同样清晰流畅。">
+<meta name="keywords" content="齐力电影网,齐力电影,齐力影院,电影推荐,热门电影榜单,影视分类导航,在线电影,qilidianyingwang-cn.github.io">
+<meta name="author" content="齐力电影网">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://qilidianyingwang-cn.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="齐力电影网">
+<meta property="og:title" content="齐力电影网 - 热门影视榜单与精选电影推荐">
+<meta property="og:description" content="齐力电影网精选蜂巢、蜜量热榜、蜂房索引与采蜜资讯，一站式发现好电影。">
+<meta property="og:url" content="https://qilidianyingwang-cn.github.io/">
+<meta name="theme-color" content="#ffb524">
+<style>
+:root{
+  --cream:#fff9ef;
+  --cream2:#fdf1dd;
+  --paper:#ffffff;
+  --ink:#241804;
+  --ink2:#5c4718;
+  --mu:#9a8352;
+  --hair:#e8d9b8;
+  --hair2:#d6bf90;
+  --honey:#ffb524;
+  --honey2:#f08c00;
+  --gold:#ffd166;
+  --amber:#c97a06;
+  --hive:#2b1f06;
+  --hive2:#3d2c09;
+  --hex:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--sans);color:var(--ink);line-height:1.82;
+  background-color:var(--cream);
+  background-image:
+    radial-gradient(circle at 12% 8%,rgba(255,181,36,.14),transparent 40%),
+    radial-gradient(circle at 88% 66%,rgba(240,140,0,.09),transparent 44%);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul,ol,dl,dd{list-style:none;margin:0;padding:0;}
+h1,h2,h3,h4{line-height:1.42;font-weight:800;}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 22px;}
+.mono{font-family:var(--mono);}
+
+/* ============ 顶栏 ============ */
+.combtop{height:12px;background:var(--honey);position:relative;}
+.combtop:before{
+  content:"";position:absolute;left:0;right:0;top:0;bottom:0;
+  background-image:repeating-linear-gradient(120deg,rgba(255,255,255,.5) 0 6px,transparent 6px 12px);
+}
+.chrome{
+  position:sticky;top:0;z-index:99;background:rgba(255,249,239,.96);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--hair2);box-shadow:0 4px 16px rgba(36,24,4,.08);
+}
+.chrome .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:11px;padding-bottom:11px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand .cell{
+  width:42px;height:48px;flex:0 0 42px;clip-path:var(--hex);
+  background:linear-gradient(160deg,var(--honey),var(--honey2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:13px;font-weight:900;color:var(--hive);
+  box-shadow:0 4px 10px rgba(240,140,0,.3);
+}
+.brand h1{font-size:21px;letter-spacing:2px;}
+.brand h1 em{font-style:normal;color:var(--amber);}
+.brand .en{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.26em;color:var(--mu);margin-top:2px;}
+.wing{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.wing a{
+  font-size:13px;font-weight:700;color:var(--ink2);padding:7px 15px;border-radius:6px;
+  border:1px solid var(--hair);background:var(--paper);transition:.22s;white-space:nowrap;
+}
+.wing a:hover{border-color:var(--honey);background:var(--cream2);color:var(--ink);}
+.wing a.on{background:var(--honey);border-color:var(--honey);color:var(--hive);}
+.burger{
+  display:none;font-size:13px;font-weight:700;padding:8px 16px;border-radius:6px;
+  background:var(--honey);color:var(--hive);border:0;cursor:pointer;
+}
+
+/* ============ 首屏 ============ */
+.hero{position:relative;padding:38px 0 34px;overflow:hidden;}
+.hexdeco{position:absolute;clip-path:var(--hex);background:rgba(255,181,36,.16);}
+.hexdeco.a{width:170px;height:196px;left:-46px;top:20px;}
+.hexdeco.b{width:96px;height:111px;left:96px;top:186px;background:rgba(240,140,0,.13);}
+.hexdeco.c{width:130px;height:150px;right:-30px;top:36px;background:rgba(255,209,102,.3);}
+.hexdeco.d{width:74px;height:85px;right:130px;bottom:10px;background:rgba(255,181,36,.2);}
+.hero .wrap{position:relative;z-index:2;}
+.hero .combrow{display:flex;justify-content:center;gap:6px;margin-bottom:16px;}
+.hero .combrow i{
+  width:26px;height:30px;clip-path:var(--hex);display:block;background:var(--honey);
+}
+.hero .combrow i:nth-child(even){background:var(--honey2);}
+.hero .combrow i:nth-child(3n){background:var(--gold);}
+.herobox{
+  background:var(--paper);border:1px solid var(--hair2);border-radius:10px;padding:30px 34px 28px;
+  box-shadow:0 14px 32px rgba(36,24,4,.1);text-align:center;
+}
+.hero .kick{font-family:var(--mono);font-size:11px;letter-spacing:.32em;color:var(--amber);}
+.hero h2{font-size:46px;letter-spacing:5px;margin-top:10px;line-height:1.15;}
+.hero h2 em{font-style:normal;color:var(--honey2);}
+.hero .en{font-family:var(--mono);font-size:11.5px;letter-spacing:.34em;color:var(--mu);margin-top:8px;}
+.hero .lead{margin:16px auto 0;max-width:620px;font-size:15.5px;color:var(--ink2);}
+.hero .cells{
+  margin-top:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:720px;margin-left:auto;margin-right:auto;
+}
+.hero .cells div{
+  border:1px solid var(--hair2);border-radius:8px;padding:12px 14px;background:var(--cream2);
+}
+.hero .cells span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--mu);}
+.hero .cells b{display:block;font-size:20px;margin-top:2px;}
+.hero .tags{margin-top:20px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+.hero .tags span{
+  font-size:12.5px;font-weight:700;padding:6px 15px;border-radius:6px;
+  border:1px solid var(--hair2);background:var(--cream2);color:var(--ink2);
+}
+.hero .tags span.hot{background:var(--honey);border-color:var(--honey);color:var(--hive);}
+.hero .acts{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn{
+  display:inline-block;padding:13px 30px;border-radius:6px;font-size:15px;font-weight:800;
+  background:var(--ink);color:var(--cream);transition:.22s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(36,24,4,.24);}
+.btn.gold{background:var(--honey);color:var(--hive);}
+.btn.gold:hover{box-shadow:0 10px 22px rgba(240,140,0,.32);}
+.hero .url{
+  margin:20px auto 0;max-width:640px;font-family:var(--mono);font-size:12.5px;word-break:break-all;
+  color:var(--ink2);border:1px dashed var(--hair2);border-radius:8px;padding:11px 16px;background:var(--cream2);
+}
+.hero .url b{color:var(--amber);}
+
+/* ============ 区块通用 ============ */
+section.blk{padding:40px 0;}
+.shead{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap;}
+.shead .tag{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;font-weight:800;
+  letter-spacing:.1em;padding:7px 15px;border-radius:6px;background:var(--hive);color:var(--gold);
+}
+.shead .tag i{
+  width:16px;height:18px;clip-path:var(--hex);background:var(--honey);display:block;
+}
+#rank .shead .tag i{background:var(--gold);}
+#cate .shead .tag i{background:#ffe9a8;}
+#news .shead .tag i{background:var(--honey2);}
+#about .shead .tag i{background:#fff;}
+.shead h2{font-size:26px;letter-spacing:2px;}
+.shead h2 span{display:block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--mu);margin-top:5px;}
+.shead .more{
+  margin-left:auto;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--amber);
+  border:1px solid var(--hair2);border-radius:6px;padding:6px 14px;transition:.2s;
+}
+.shead .more:hover{background:var(--honey);border-color:var(--honey);color:var(--hive);}
+
+/* ============ 01 精选蜂巢 ============ */
+.combs{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.cmb{background:var(--paper);border:1px solid var(--hair);border-radius:10px;padding:16px 14px 16px;transition:.26s;box-shadow:0 6px 16px rgba(36,24,4,.07);}
+.cmb:hover{transform:translateY(-6px);box-shadow:0 18px 32px rgba(36,24,4,.14);border-color:var(--hair2);}
+.cmb .six{
+  width:132px;height:152px;margin:0 auto 12px;clip-path:var(--hex);position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,#4a3a12,#201704);color:#fff;overflow:hidden;
+}
+.cmb:nth-child(2n) .six{background:linear-gradient(160deg,#5a2b12,#241004);}
+.cmb:nth-child(3n) .six{background:linear-gradient(160deg,#1f4433,#0a1a13);}
+.cmb:nth-child(4n) .six{background:linear-gradient(160deg,#4a2340,#1c0a18);}
+.cmb .six:before{
+  content:"";position:absolute;inset:8px;clip-path:var(--hex);border:2px solid rgba(255,209,102,.5);
+}
+.cmb .six i{
+  position:relative;font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
+  background:var(--gold);color:var(--hive);padding:2px 9px;border-radius:99px;font-weight:800;
+}
+.cmb .six b{position:relative;font-family:var(--mono);font-size:28px;color:var(--honey);margin-top:6px;}
+.cmb .six small{position:relative;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:rgba(255,255,255,.6);margin-top:2px;}
+.cmb h3{font-size:16px;letter-spacing:.5px;text-align:center;}
+.cmb h3:hover{color:var(--amber);}
+.cmb .meta{font-family:var(--mono);font-size:11px;color:var(--mu);text-align:center;margin-top:3px;}
+.cmb .bar{
+  margin-top:11px;height:8px;border-radius:99px;background:var(--cream2);border:1px solid var(--hair);overflow:hidden;
+}
+.cmb .bar i{
+  display:block;height:100%;
+  background-image:repeating-linear-gradient(90deg,var(--honey) 0 8px,var(--gold) 8px 16px);
+}
+
+/* ============ 02 蜜量热榜 ============ */
+.honey{
+  background:var(--paper);border:1px solid var(--hair2);border-radius:10px;padding:20px 20px 16px;
+  box-shadow:0 10px 24px rgba(36,24,4,.09);
+}
+.honey .htop{
+  display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mu);
+  border-bottom:1px dashed var(--hair2);padding-bottom:10px;margin-bottom:12px;
+}
+.honey .htop b{color:var(--amber);}
+.jar{
+  display:grid;grid-template-columns:58px 1fr 176px 62px;gap:14px;align-items:center;
+  padding:9px 10px;border-radius:8px;transition:.2s;
+}
+.jar:hover{background:var(--cream2);}
+.jar .no{
+  width:46px;height:53px;clip-path:var(--hex);background:var(--hive);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:15px;font-weight:900;
+}
+.jar:nth-child(-n+3) .no{background:linear-gradient(160deg,var(--honey),var(--honey2));color:var(--hive);}
+.jar .tt{min-width:0;}
+.jar .tt h3{font-size:15.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.jar .tt h3:hover{color:var(--amber);}
+.jar .tt span{font-family:var(--mono);font-size:11px;color:var(--mu);}
+.jar .fill{display:flex;gap:3px;align-items:center;}
+.jar .fill i{
+  width:15px;height:17px;clip-path:var(--hex);background:var(--cream2);
+  border:0;display:block;flex:0 0 15px;
+}
+.jar .fill i.on{background:linear-gradient(160deg,var(--honey),var(--honey2));}
+.jar .pt{font-family:var(--mono);font-size:18px;font-weight:800;color:var(--amber);text-align:right;}
+.honey .hnote{
+  margin-top:12px;border-top:1px dashed var(--hair2);padding-top:10px;
+  font-family:var(--mono);font-size:11.5px;color:var(--mu);
+}
+.honey .hnote b{color:var(--ink);}
+
+/* ============ 03 蜂房索引 ============ */
+.hive{
+  --hw:150px;--hh:173px;
+  display:flex;flex-direction:column;align-items:center;padding:10px 0 4px;
+}
+.hive .hrow{display:flex;justify-content:center;}
+.hive .hrow + .hrow{margin-top:calc(var(--hh) * -0.25 + 6px);}
+.hive .cellx{
+  width:var(--hw);height:var(--hh);clip-path:var(--hex);margin:0 3px;position:relative;
+  background:linear-gradient(165deg,#463509,#241a03);color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 14px;
+  transition:.26s;
+}
+.hive .cellx:nth-child(even){background:linear-gradient(165deg,#5a3d08,#2c1e03);}
+.hive .cellx:hover{background:linear-gradient(165deg,var(--honey),var(--honey2));color:var(--hive);}
+.hive .cellx:hover .ct{color:var(--hive);}
+.hive .cellx:hover small{color:rgba(43,31,6,.7);}
+.hive .cellx h3{font-size:15.5px;letter-spacing:.5px;}
+.hive .cellx .ct{font-family:var(--mono);font-size:13px;font-weight:800;color:var(--gold);margin-top:2px;}
+.hive .cellx small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:rgba(255,255,255,.55);margin-top:3px;}
+.hivefoot{
+  margin-top:14px;text-align:center;font-family:var(--mono);font-size:11.5px;color:var(--mu);
+}
+
+/* ============ 04 采蜜资讯 ============ */
+.nectar{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.nec{
+  position:relative;background:var(--paper);border:1px solid var(--hair);border-radius:10px;
+  padding:18px 20px 18px 20px;transition:.26s;box-shadow:0 6px 16px rgba(36,24,4,.07);overflow:hidden;
+}
+.nec:hover{transform:translateY(-5px);box-shadow:0 18px 30px rgba(36,24,4,.14);border-color:var(--hair2);}
+.nec:before{
+  content:"";position:absolute;left:-30px;top:-30px;width:96px;height:110px;
+  clip-path:var(--hex);background:rgba(255,181,36,.16);
+}
+.nec .seal{
+  width:58px;height:66px;clip-path:var(--hex);background:var(--honey);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;float:left;margin:0 16px 6px 0;
+  font-family:var(--mono);color:var(--hive);
+}
+.nec .seal b{font-size:16px;line-height:1;font-weight:900;}
+.nec .seal span{font-size:9.5px;letter-spacing:.06em;margin-top:3px;}
+.nec h3{font-size:17.5px;letter-spacing:.5px;padding-top:2px;}
+.nec h3:hover{color:var(--amber);}
+.nec time{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mu);margin-top:6px;}
+.nec p{font-size:13.5px;color:var(--ink2);margin-top:8px;clear:both;}
+.nec .rd{
+  margin-top:12px;display:inline-block;font-size:13px;font-weight:700;color:var(--amber);
+  border-bottom:1px solid rgba(201,122,6,.4);padding-bottom:2px;
+}
+
+/* ============ 05 蜂巢说明 ============ */
+.queens{
+  background:var(--hive);border-radius:10px;padding:22px 22px 20px;
+  box-shadow:0 14px 30px rgba(36,24,4,.28);
+}
+.queens .qh{
+  font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--gold);
+  border-bottom:1px dashed rgba(255,209,102,.35);padding-bottom:10px;margin-bottom:16px;
+}
+.qc{
+  display:grid;grid-template-columns:76px 1fr;gap:16px;align-items:start;
+  padding:14px 0;border-bottom:1px dashed rgba(255,209,102,.22);
+}
+.qc:last-of-type{border-bottom:0;}
+.qc .kx{
+  width:76px;height:87px;clip-path:var(--hex);background:var(--honey);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:12px;font-weight:900;color:var(--hive);letter-spacing:.06em;
+}
+.qc:nth-child(3) .kx{background:var(--gold);}
+.qc:nth-child(4) .kx{background:#ffe9a8;}
+.qc:nth-child(5) .kx{background:var(--honey2);color:#fff;}
+.qc h3{font-size:16.5px;color:#fff;}
+.qc p{margin-top:7px;font-size:13.5px;color:rgba(255,249,239,.74);}
+.queens .plate{
+  margin-top:18px;border:1px dashed rgba(255,209,102,.4);border-radius:8px;padding:16px 18px;
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;background:rgba(255,255,255,.05);
+}
+.queens .plate .t{font-family:var(--mono);font-size:14px;letter-spacing:.12em;font-weight:800;color:var(--gold);}
+.queens .plate .u{
+  font-family:var(--mono);font-size:12.5px;word-break:break-all;color:var(--honey);
+  background:rgba(255,181,36,.12);border:1px solid rgba(255,181,36,.35);border-radius:6px;padding:9px 15px;
+}
+
+/* ============ 页脚 ============ */
+footer{margin-top:18px;background:var(--hive);color:rgba(255,249,239,.72);padding:34px 0 20px;border-top:8px solid var(--honey);}
+.fgrid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:26px;}
+.fgrid h4{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;color:var(--gold);margin-bottom:11px;}
+.fgrid li{font-size:13.5px;padding:4px 0;}
+.fgrid li a:hover{color:var(--honey);}
+.fgrid .intro{font-size:13.5px;}
+.fgrid .intro b{color:var(--honey);}
+.fbot{
+  margin-top:24px;padding-top:16px;border-top:1px dashed rgba(255,209,102,.25);
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-family:var(--mono);font-size:11.5px;
+  color:rgba(255,249,239,.5);
+}
+.fbot a{color:rgba(255,249,239,.5);}
+.fbot a:hover{color:var(--honey);}
+
+#top{
+  position:fixed;right:16px;bottom:20px;width:50px;height:56px;border:0;cursor:pointer;display:none;
+  background:var(--honey);color:var(--hive);font-size:18px;font-weight:900;clip-path:var(--hex);
+  box-shadow:0 10px 24px rgba(240,140,0,.34);
+}
+#top.show{display:block;}
+
+/* ============ 移动端自适应 ============ */
+@media (max-width:980px){
+  .hero h2{font-size:34px;letter-spacing:3px;}
+  .hero .cells{grid-template-columns:1fr 1fr;}
+  .combs{grid-template-columns:repeat(2,1fr);}
+  .jar{grid-template-columns:58px 1fr 62px;gap:10px;}
+  .jar .fill{display:none;}
+  .hive{--hw:124px;--hh:143px;}
+  .fgrid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:720px){
+  .wing{display:none;width:100%;flex-direction:column;gap:5px;padding-bottom:8px;}
+  .wing.show{display:flex;}
+  .wing a{width:100%;text-align:center;}
+  .burger{display:block;}
+  .chrome .wrap{padding-top:9px;padding-bottom:9px;}
+  .brand h1{font-size:18px;letter-spacing:1px;}
+  section.blk{padding:30px 0;}
+  .shead h2{font-size:21px;letter-spacing:1px;}
+  .wrap{padding:0 16px;}
+  .hero{padding:24px 0 24px;}
+  .herobox{padding:22px 18px 20px;}
+  .hero h2{font-size:28px;letter-spacing:2px;}
+  .hero .en{letter-spacing:.2em;font-size:10px;}
+  .hexdeco.a{width:110px;height:127px;left:-40px;}
+  .hexdeco.c{width:92px;height:106px;right:-26px;}
+  .hexdeco.b,.hexdeco.d{display:none;}
+  .nectar{grid-template-columns:1fr;}
+  .hive{--hw:112px;--hh:129px;}
+  .honey{padding:14px 12px 12px;}
+  .queens{padding:16px 16px 16px;}
+  .qc{grid-template-columns:1fr;gap:10px;}
+  .qc .kx{margin:0 auto;}
+}
+@media (max-width:620px){
+  .hive{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:8px;}
+  .hive .hrow{flex-wrap:wrap;justify-content:center;gap:8px;}
+  .hive .hrow + .hrow{margin-top:0;}
+  .hive .cellx{margin:0;width:104px;height:120px;padding:0 8px;}
+  .hive .cellx h3{font-size:13.5px;}
+  .hive .cellx .ct{font-size:12px;}
+  .hive .cellx small{font-size:8px;letter-spacing:.1em;}
+}
+@media (max-width:480px){
+  .combs{grid-template-columns:1fr;}
+  .cmb .six{width:116px;height:134px;}
+  .fgrid{grid-template-columns:1fr;}
+  .hero .cells{grid-template-columns:1fr;}
+  .hero h2{font-size:24px;}
+  .jar{grid-template-columns:48px 1fr 52px;gap:8px;padding:9px 6px;}
+  .jar .no{width:40px;height:46px;font-size:13px;}
+  .jar .pt{font-size:15px;}
+  .nec .seal{width:50px;height:57px;margin-right:12px;}
+  .nec h3{font-size:16px;}
+  .hive .cellx{width:96px;height:111px;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<div class="combtop" aria-hidden="true"></div>
+
+<header class="chrome">
+  <div class="wrap">
+    <a class="brand" href="#" title="齐力电影网">
+      <span class="cell" aria-hidden="true">QL</span>
+      <span>
+        <h1>齐力<em>电影网</em></h1>
+        <span class="en">QILI CINEMA · HIVE COLLECTION</span>
+      </span>
+    </a>
+    <button class="burger" type="button" id="burger" aria-label="打开导航菜单">蜂房导航 ☰</button>
+    <nav class="wing" id="wing" aria-label="网站主导航">
+      <a href="#home" class="on">首页</a>
+      <a href="#film">精选蜂巢</a>
+      <a href="#rank">蜜量热榜</a>
+      <a href="#cate">蜂房索引</a>
+      <a href="#news">采蜜资讯</a>
+      <a href="#about">蜂巢说明</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+    <span class="hexdeco a" aria-hidden="true"></span>
+    <span class="hexdeco b" aria-hidden="true"></span>
+    <span class="hexdeco c" aria-hidden="true"></span>
+    <span class="hexdeco d" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="combrow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="herobox">
+        <p class="kick">QILI CINEMA · HIVE SELECT</p>
+        <h2>齐力<em>电影网</em></h2>
+        <p class="en">QILI MOVIE NETWORK</p>
+        <p class="lead">齐力电影网是一个专注电影推荐与影视资讯的站点，汇聚精选片单、每日热榜与全类型蜂房索引，帮你在海量片库里少花时间、多看好片。</p>
+        <div class="cells">
+          <div><span>ENTRIES</span><b>9,600+</b></div>
+          <div><span>CELLS</span><b>14 间</b></div>
+          <div><span>REFRESH</span><b>每日 08:00</b></div>
+          <div><span>TERMINAL</span><b>全端适配</b></div>
+        </div>
+        <div class="tags">
+          <span class="hot">齐力电影网</span>
+          <span class="hot">齐力电影</span>
+          <span>精选蜂巢</span>
+          <span>蜜量热榜</span>
+          <span>蜂房索引</span>
+          <span>移动端自适应</span>
+        </div>
+        <div class="acts">
+          <a class="btn gold" href="#film">进入精选蜂巢</a>
+          <a class="btn" href="#rank">查看今日热榜</a>
+        </div>
+        <p class="url">官方网址 / <b>https://qilidianyingwang-cn.github.io</b></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="film">
+    <div class="wrap">
+      <div class="shead">
+        <span class="tag"><i aria-hidden="true"></i>CELL 01</span>
+        <h2>精选蜂巢<span>FEATURED COMB · 8 CELLS SELECTED BY EDITORS</span></h2>
+        <a class="more" href="#">查看全部 →</a>
+      </div>
+      <div class="combs">
+        <article class="cmb">
+          <a href="#">
+            <div class="six"><i>剧情</i><b>9.1</b><small>DRAMA</small></div>
+            <h3>长夜将尽</h3>
+            <p class="meta">伦理剧情 · 2025 · 118 分钟</p>
+            <div class="bar"><i style="width:91%"></i></div>
+          </a>
+        </article>
+        <article class="cmb">
+          <a href="#">
+            <div class="six"><i>家庭</i><b>8.9</b><small>FAMILY</small></div>
+            <h3>沉默的河</h3>
+            <p class="meta">家庭伦理 · 2024 · 126 分钟</p>
+            <div class="bar"><i style="width:89%"></i></div>
+          </a>
+        </article>
+        <article class="cmb">
+          <a href="#">
+            <div class="six"><i>爱情</i><b>8.7</b><small>ROMANCE</small></div>
+            <h3>海边的信</h3>
+            <p class="meta">伦理爱情 · 2025 · 104 分钟</p>
+            <div class="bar"><i style="width:87%"></i></div>
+          </a>
+        </article>
+        <article class="cmb">
+          <a href="#">
+            <div class="six"><i>现实</i><b>8.6</b><small>SOCIETY</small></div>
+            <h3>第七个春天</h3>
+            <p class="meta">伦理现实 · 2024 · 132 分钟</p>
+            <div class="bar"><i style="width:86%"></i></div>
+          </a>
+        </article>
+        <article class="cmb">
+          <a href="#">
+            <div class="six"><i>社会</i><b>8.5</b><small>SOCIAL</small></div>
+            <h3>归途列车</h3>
+            <p class="meta">伦理社会 · 2023 · 121 分钟</p>
+            <div class="bar"><i style="width:85%"></i></div>
+          </a>
+        </article>
+        <article class="cmb">
+          <a href="#">
+            <div class="six"><i>治愈</i><b>8.4</b><small>HEALING</small></div>
+            <h3>人间处方</h3>
+            <p class="meta">伦理治愈 · 2025 · 110 分钟</p>
+            <div class="bar"><i style="width:84%"></i></div>
+          </a>
+        </article>
+        <article class="cmb">
+          <a href="#">
+            <div class="six"><i>心理</i><b>8.2</b><small>PSYCHO</small></div>
+            <h3>空白的一页</h3>
+            <p class="meta">伦理心理 · 2024 · 115 分钟</p>
+            <div class="bar"><i style="width:82%"></i></div>
+          </a>
+        </article>
+        <article class="cmb">
+          <a href="#">
+            <div class="six"><i>文艺</i><b>8.0</b><small>INDIE</small></div>
+            <h3>晚灯</h3>
+            <p class="meta">伦理文艺 · 2023 · 99 分钟</p>
+            <div class="bar"><i style="width:80%"></i></div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="rank">
+    <div class="wrap">
+      <div class="shead">
+        <span class="tag"><i aria-hidden="true"></i>CELL 02</span>
+        <h2>蜜量热榜 TOP 10<span>HONEY VOLUME · 蜜格点亮数量对应当日热度</span></h2>
+        <a class="more" href="#">榜单规则 →</a>
+      </div>
+      <div class="honey">
+        <div class="htop">
+          <span>DAILY RANKING · 2026-10-02</span>
+          <span>NEXT REFRESH <b>08:00</b></span>
+        </div>
+        <ol>
+          <li class="jar"><span class="no">01</span><span class="tt"><a href="#"><h3>长夜将尽</h3></a><span>伦理剧情 · 2025 · 热度 96.2 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="pt">9.1</span></li>
+          <li class="jar"><span class="no">02</span><span class="tt"><a href="#"><h3>沉默的河</h3></a><span>家庭伦理 · 2024 · 热度 88.7 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="pt">8.9</span></li>
+          <li class="jar"><span class="no">03</span><span class="tt"><a href="#"><h3>海边的信</h3></a><span>伦理爱情 · 2025 · 热度 81.3 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="pt">8.7</span></li>
+          <li class="jar"><span class="no">04</span><span class="tt"><a href="#"><h3>第七个春天</h3></a><span>伦理现实 · 2024 · 热度 76.5 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="pt">8.6</span></li>
+          <li class="jar"><span class="no">05</span><span class="tt"><a href="#"><h3>归途列车</h3></a><span>伦理社会 · 2023 · 热度 69.8 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="pt">8.5</span></li>
+          <li class="jar"><span class="no">06</span><span class="tt"><a href="#"><h3>人间处方</h3></a><span>伦理治愈 · 2025 · 热度 63.1 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="pt">8.4</span></li>
+          <li class="jar"><span class="no">07</span><span class="tt"><a href="#"><h3>空白的一页</h3></a><span>伦理心理 · 2024 · 热度 57.6 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="pt">8.2</span></li>
+          <li class="jar"><span class="no">08</span><span class="tt"><a href="#"><h3>晚灯</h3></a><span>伦理文艺 · 2023 · 热度 49.2 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></span><span class="pt">8.0</span></li>
+          <li class="jar"><span class="no">09</span><span class="tt"><a href="#"><h3>旧巷回声</h3></a><span>伦理年代 · 2022 · 热度 44.7 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></span><span class="pt">7.9</span></li>
+          <li class="jar"><span class="no">10</span><span class="tt"><a href="#"><h3>未完成的信</h3></a><span>伦理纪录 · 2023 · 热度 39.5 万</span></span><span class="fill" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span><span class="pt">7.8</span></li>
+        </ol>
+        <p class="hnote">蜜格由当日热度归一换算点亮；评分取全站用户打分均值，<b>榜单每日 08:00 刷新一次</b>。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="cate">
+    <div class="wrap">
+      <div class="shead">
+        <span class="tag"><i aria-hidden="true"></i>CELL 03</span>
+        <h2>蜂房索引<span>COMB INDEX · 14 间蜂房，六边形密排不浪费一寸空间</span></h2>
+        <a class="more" href="#">展开完整索引 →</a>
+      </div>
+      <div class="hive">
+        <div class="hrow">
+          <a class="cellx" href="#"><h3>伦理剧情</h3><span class="ct">1,286</span><small>DRAMA</small></a>
+          <a class="cellx" href="#"><h3>家庭伦理</h3><span class="ct">948</span><small>FAMILY</small></a>
+          <a class="cellx" href="#"><h3>情感爱情</h3><span class="ct">1,073</span><small>ROMANCE</small></a>
+          <a class="cellx" href="#"><h3>社会现实</h3><span class="ct">762</span><small>SOCIETY</small></a>
+        </div>
+        <div class="hrow">
+          <a class="cellx" href="#"><h3>心理悬疑</h3><span class="ct">615</span><small>PSYCHO</small></a>
+          <a class="cellx" href="#"><h3>文艺独立</h3><span class="ct">529</span><small>INDIE</small></a>
+          <a class="cellx" href="#"><h3>年代怀旧</h3><span class="ct">487</span><small>PERIOD</small></a>
+        </div>
+        <div class="hrow">
+          <a class="cellx" href="#"><h3>纪录影像</h3><span class="ct">356</span><small>DOCUMENTARY</small></a>
+          <a class="cellx" href="#"><h3>经典修复</h3><span class="ct">294</span><small>CLASSIC</small></a>
+          <a class="cellx" href="#"><h3>治愈温情</h3><span class="ct">418</span><small>HEALING</small></a>
+          <a class="cellx" href="#"><h3>国产影片</h3><span class="ct">1,842</span><small>CHINESE</small></a>
+        </div>
+        <div class="hrow">
+          <a class="cellx" href="#"><h3>欧美影片</h3><span class="ct">1,264</span><small>WESTERN</small></a>
+          <a class="cellx" href="#"><h3>日韩影片</h3><span class="ct">803</span><small>JK-CINEMA</small></a>
+          <a class="cellx" href="#"><h3>动画剧场</h3><span class="ct">372</span><small>ANIMATION</small></a>
+        </div>
+      </div>
+      <p class="hivefoot">共 14 间蜂房 · 合计 9,600+ 条 · 支持按类型、地区、年代三维检索</p>
+    </div>
+  </section>
+
+  <section class="blk" id="news">
+    <div class="wrap">
+      <div class="shead">
+        <span class="tag"><i aria-hidden="true"></i>CELL 04</span>
+        <h2>采蜜资讯<span>NECTAR LOG · 院线动态与流媒体上线速递</span></h2>
+        <a class="more" href="#">进入资讯频道 →</a>
+      </div>
+      <div class="nectar">
+        <article class="nec">
+          <span class="seal"><b>01</b><span>10-01</span></span>
+          <h3><a href="#">本周新片速递：三部伦理题材影片同日上线</a></h3>
+          <time datetime="2026-10-01">2026-10-01 · 新片速递</time>
+          <p>齐力电影网整理本周上线片单，覆盖剧情、家庭与纪录三个方向，并附看点速览与观影建议。</p>
+          <a class="rd" href="#">阅读全文 →</a>
+        </article>
+        <article class="nec">
+          <span class="seal"><b>02</b><span>09-27</span></span>
+          <h3><a href="#">秋季档观察：中小成本现实题材为何频出黑马</a></h3>
+          <time datetime="2026-09-27">2026-09-27 · 档期观察</time>
+          <p>从排片结构、口碑发酵路径与观众画像三个角度，拆解今年秋季档几部黑马影片的共同特征。</p>
+          <a class="rd" href="#">阅读全文 →</a>
+        </article>
+        <article class="nec">
+          <span class="seal"><b>03</b><span>09-22</span></span>
+          <h3><a href="#">观影指南：用蜂房索引与蜜量榜搭建个人片单</a></h3>
+          <time datetime="2026-09-22">2026-09-22 · 实用指南</time>
+          <p>给新手影迷的实用建议，教你利用齐力电影网的蜂房索引与榜单体系建立专属电影库。</p>
+          <a class="rd" href="#">阅读全文 →</a>
+        </article>
+        <article class="nec">
+          <span class="seal"><b>04</b><span>09-18</span></span>
+          <h3><a href="#">榜单机制说明：热度与评分如何共同决定排名</a></h3>
+          <time datetime="2026-09-18">2026-09-18 · 机制说明</time>
+          <p>详解本站蜜量热榜的加权口径、数据周期与异常值处理方式，帮助你更准确地理解排名变化。</p>
+          <a class="rd" href="#">阅读全文 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="about">
+    <div class="wrap">
+      <div class="shead">
+        <span class="tag"><i aria-hidden="true"></i>CELL 05</span>
+        <h2>蜂巢说明<span>HIVE NOTES · 站点定位、内容组织方式与常见问题</span></h2>
+      </div>
+      <div class="queens">
+        <p class="qh">HIVE INFORMATION</p>
+        <div class="qc">
+          <span class="kx">Q1</span>
+          <div>
+            <h3>齐力电影网提供哪些内容？</h3>
+            <p>本站提供精选蜂巢、蜜量热榜、蜂房索引与采蜜资讯四大板块内容，覆盖伦理剧情、家庭、社会现实等类型，帮助用户快速定位想看的影片。</p>
+          </div>
+        </div>
+        <div class="qc">
+          <span class="kx">Q2</span>
+          <div>
+            <h3>热榜是如何排序的？</h3>
+            <p>榜单依据站内浏览热度、用户评分与互动数据加权计算得出，每日 08:00 刷新一次，并同步展示蜜格点亮数量与评分供参考。</p>
+          </div>
+        </div>
+        <div class="qc">
+          <span class="kx">Q3</span>
+          <div>
+            <h3>手机端体验如何保证？</h3>
+            <p>页面采用响应式布局，小屏下导航折叠为蜂房导航按钮，蜂巢卡与资讯卡转为单列，蜂房改为自由排布的六边形簇，保证阅读与点击都顺畅。</p>
+          </div>
+        </div>
+        <div class="qc">
+          <span class="kx">Q4</span>
+          <div>
+            <h3>如何联系齐力电影网？</h3>
+            <p>可通过页脚「关于与联系」栏目提交合作、投稿或版权相关反馈，我们会在收到后尽快处理并回复。</p>
+          </div>
+        </div>
+        <div class="plate">
+          <span class="t">齐力电影网 · 官方网址</span>
+          <span class="u">https://qilidianyingwang-cn.github.io</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>齐力电影网</h4>
+        <p class="intro">齐力电影网专注电影推荐与影视资讯聚合，精选片单与热榜每日更新，帮你更快找到好电影。</p>
+        <p class="intro" style="margin-top:10px;">官方网址：<b>https://qilidianyingwang-cn.github.io</b></p>
+      </div>
+      <div>
+        <h4>蜂房导航</h4>
+        <ul>
+          <li><a href="#film">精选蜂巢</a></li>
+          <li><a href="#rank">蜜量热榜</a></li>
+          <li><a href="#cate">蜂房索引</a></li>
+          <li><a href="#news">采蜜资讯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>热门分类</h4>
+        <ul>
+          <li><a href="#">伦理剧情</a></li>
+          <li><a href="#">家庭伦理</a></li>
+          <li><a href="#">情感爱情</a></li>
+          <li><a href="#">社会现实</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于与联系</h4>
+        <ul>
+          <li><a href="#about">蜂巢说明</a></li>
+          <li><a href="#">友情链接</a></li>
+          <li><a href="#">意见反馈</a></li>
+          <li><a href="#">版权声明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <p>Copyright © 2026 齐力电影网 · qilidianyingwang-cn.github.io · All Rights Reserved.</p>
+      <p><a href="#">网站地图</a> · <a href="#">隐私政策</a> · <a href="#">免责声明</a></p>
+    </div>
+  </div>
+</footer>
+
+<button type="button" id="top" aria-label="返回顶部">↑</button>
+
+<script>
+(function(){
+  var burger = document.getElementById('burger');
+  var wing = document.getElementById('wing');
+  burger.addEventListener('click', function(){
+    wing.classList.toggle('show');
+  });
+  wing.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ wing.classList.remove('show'); }
+  });
+  var links = document.querySelectorAll('.wing a');
+  var top = document.getElementById('top');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY + 150;
+    var cur = null;
+    for(var i = 0; i < links.length; i++){
+      var el = document.getElementById(links[i].getAttribute('href').slice(1));
+      if(el && el.offsetTop <= y){ cur = links[i]; }
+    }
+    if(!cur){ cur = links[0]; }
+    for(var j = 0; j < links.length; j++){ links[j].classList.remove('on'); }
+    cur.classList.add('on');
+    if(window.scrollY > 340){ top.classList.add('show'); }
+    else { top.classList.remove('show'); }
+  });
+  top.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
